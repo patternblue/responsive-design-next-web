@@ -1,0 +1,188 @@
+
+
+
+/*
+topics: apps/gear... (stacked, 3, 4, 5-grid):
+720 (also changes heading to mobile and first story as the front pic)
+1036
+1356
+*/
+
+
+
+/*misc*/
+*{
+	border: 1px dotted red !important;
+}
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.clearfix {
+  overflow: auto;
+}
+
+/*grid*/
+/*clear anything after a grid*/
+.grid:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/*gutters*/
+[class*='col'] {
+	height: 80px;
+	float: left;
+}
+
+/*columns*/
+
+/*top stories columns*/
+@media screen and (min-width: 1040px) {
+	#top-story {
+		background: blue;
+		width: 50%;
+		height: 100%;
+	}
+	#second-top-story{
+		background: green;
+		width: 50%;
+		height: 50%;
+	}
+	.more-top-stories{
+		background: orange;
+		width: 25%;
+			height: 50%;
+	}
+}
+@media screen and (min-width: 781px) and (max-width: 1040px){
+	#top-story{
+		background: blue;
+		width: 100%;
+		height: 50%;
+	}
+	#second-top-story, .more-top-stories{
+		background: orange;
+		width: 33.3%;
+		height: 50%;
+	}
+}
+@media screen and (max-width: 781px){
+	#top-stories .col{
+		background: blue;
+		width: 100%;
+		height: 25%;
+	}
+	/*footer response*/
+	#footer-top, #footer-bottom{
+		text-align: center;
+	}
+}
+/*footer response*/
+@media screen and (min-width: 781px){
+	#footer-logo, #footer-nav-social-media, #footer-quote, #footer-bottom .share-button, #copyright{
+		float: left;
+		clear: left;
+	}
+	#footer-nav, #maxcdn{
+		float: right;
+		clear: right;
+	}	
+	#footer-nav li{
+		float: left;
+	}
+	#footer-top{
+		height: 100px;
+	}
+	#footer-bottom{
+		height: 100px;
+	}
+}
+
+/*latest-news columns*/
+@media screen and (max-width: 653px){
+	#latest-news .col{
+		width: 50%;
+	}	
+}
+@media screen and (min-width: 653px) and (max-width: 720px){
+	#latest-news .col{
+		width: 33.3%;
+	}	
+}
+@media screen and (min-width: 720px) and (max-width: 942px){
+	#latest-news .col{
+		width: 25%;
+	}	
+}
+@media screen and (min-width: 942px) and (max-width: 1165px){
+	#latest-news .col{
+		width: 20%;
+	}	
+	#latest-news .col:nth-child(n+11){
+		display: none;
+	}
+}
+@media screen and (min-width: 1165px){
+	#latest-news .col{
+		width: 16.66%;
+	}	
+}
+
+/*categories columns*/
+@media screen and (max-width: 720px){
+	#categories .col{
+		width: 100%;		
+	}
+}
+@media screen and (min-width: 720px) and (max-width: 1036px){
+	#categories .col{
+		width: 33.3%;		
+	}
+	#categories .col:nth-child(n+4){
+		display: none;
+	}
+}
+@media screen and (min-width: 1036px) and (max-width: 1200px){
+	#categories .col{
+		width: 25%;		
+	}
+	#categories .col:last-child{
+		display: none;
+	}
+}
+@media screen and (min-width: 1200px){
+	#categories .col{
+		width: 20%;		
+	}
+}
+
+/*main sections*/
+
+header{
+	background: black;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 50px;
+}
+#main{
+	background: #ddd;
+	margin-top: 50px;
+}
+#top-stories{
+	height: 500px;
+}
+#latest-news{
+	background: #fff;
+}
+#latest-news .grid, #categories .grid{
+	width: 90%;
+	margin: 0 auto;
+}
+
+
+
+
+
