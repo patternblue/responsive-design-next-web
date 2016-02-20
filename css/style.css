@@ -20,7 +20,10 @@ topics: apps/gear... (stacked, 3, 4, 5-grid):
           box-sizing: border-box;
 }
 .clearfix {
-  overflow: auto;
+  overflow: hidden;
+}
+strong{
+	font-weight: bold;
 }
 
 /*grid*/
@@ -31,72 +34,59 @@ topics: apps/gear... (stacked, 3, 4, 5-grid):
   clear: both;
 }
 /*gutters*/
-[class*='col'] {
-	height: 80px;
+/*[class*='col'] {
 	float: left;
+	padding: 5px 5px;
+}*/
+.col {
+	float: left;
+	padding: 5px 5px;
 }
 
 /*columns*/
 
 /*top stories columns*/
-@media screen and (min-width: 1040px) {
-	#top-story {
-		background: blue;
-		width: 50%;
-		height: 100%;
-	}
-	#second-top-story{
-		background: green;
-		width: 50%;
-		height: 50%;
-	}
-	.more-top-stories{
-		background: orange;
-		width: 25%;
-			height: 50%;
-	}
-}
-@media screen and (min-width: 781px) and (max-width: 1040px){
-	#top-story{
-		background: blue;
-		width: 100%;
-		height: 50%;
-	}
-	#second-top-story, .more-top-stories{
-		background: orange;
-		width: 33.3%;
-		height: 50%;
-	}
-}
 @media screen and (max-width: 781px){
 	#top-stories .col{
-		background: blue;
 		width: 100%;
 		height: 25%;
+		background-size: 100% auto;
 	}
 	/*footer response*/
 	#footer-top, #footer-bottom{
 		text-align: center;
 	}
+	#maxcdn{
+		margin: auto auto;
+	}
 }
-/*footer response*/
-@media screen and (min-width: 781px){
-	#footer-logo, #footer-nav-social-media, #footer-quote, #footer-bottom .share-button, #copyright{
-		float: left;
-		clear: left;
+@media screen and (min-width: 781px) and (max-width: 1040px){
+	#top-story-0{
+		background-size:  100% auto;
+		width: 100%;
+		height: 50%;
 	}
-	#footer-nav, #maxcdn{
-		float: right;
-		clear: right;
-	}	
-	#footer-nav li{
-		float: left;
+	#top-story-1, #top-story-2, #top-story-3{
+		width: 33.3%;
+		height: 50%;
+		background-size: auto 100%;
 	}
-	#footer-top{
-		height: 100px;
+}
+@media screen and (min-width: 1040px) {
+	#top-story-0 {
+		background-size: auto 100%;
+		width: 50%;
+		height: 100%;
 	}
-	#footer-bottom{
-		height: 100px;
+	#top-story-1{
+		width: 50%;
+		height: 50%;
+		background-size: 100% auto;
+	}
+	#top-story-2, #top-story-3{
+		width: 25%;
+		height: 50%;
+		background-size: auto 100%;
 	}
 }
 
@@ -120,7 +110,7 @@ topics: apps/gear... (stacked, 3, 4, 5-grid):
 	#latest-news .col{
 		width: 20%;
 	}	
-	#latest-news .col:nth-child(n+11){
+	#latest-news .col:nth-child(n+12){
 		display: none;
 	}
 }
@@ -131,41 +121,149 @@ topics: apps/gear... (stacked, 3, 4, 5-grid):
 }
 
 /*categories columns*/
+
 @media screen and (max-width: 720px){
-	#categories .col{
-		width: 100%;		
+	#latest-news .img-thumb{
+		width: 100%;
+		height: 100px;
+	}
+	#categories .col, #latest-deals .col{
+		width: 100%;	
+		height: 80px;	
+	}
+	#categories .img-thumb, #latest-deals .img-thumb{
+		height: 100%;
+		width: 25%;
+		float: left;
+	}
+	#categories .first-col, #latest-deals .first-col{
+		height: 340px;
+	}
+	#categories .first-col .img-thumb, #latest-deals .first-col .img-thumb{
+		height: 80%;
+		width: 100%;
+	}
+	/*mobile response (headers)*/
+	.category-header{
+		margin-top: 10px;
+		color: #fff;
+		background: #f00;
+		padding: 5px 5px;
+	}
+	.category-header h1{
+		float: left;
+		font-size: 1em;
+		/*font-weight: bold;*/
+	}
+	.category-header .arrow{
+		float: right;
+		/*margin-bottom: 0;*/
+	}
+	.category-header h2{
+		display: none;
+	}
+}
+/*mobile response*/
+@media screen and (min-width: 720px){
+	.img-thumb{
+		width: 100%;
+		height: 100px;
+	}
+	/*mobile response (headers)*/
+	.category-header{
+		margin: 20px 0;
+		color: #f00;
+	}
+	.category-header h1{
+		float: left;
+		font-size: 2em;
+		font-weight: bold;
+	}
+	.category-header .arrow{
+		float: right;
+	}
+	.category-header h2{
+		float: right;
+		/*margin-bottom: 0;*/
+		font-size: 1em;
 	}
 }
 @media screen and (min-width: 720px) and (max-width: 1036px){
-	#categories .col{
+	#categories .col, #latest-deals .col{
 		width: 33.3%;		
 	}
-	#categories .col:nth-child(n+4){
+	#categories .col:nth-child(n+5){
+		display: none;
+	}
+	#latest-deals .col:last-child{
 		display: none;
 	}
 }
 @media screen and (min-width: 1036px) and (max-width: 1200px){
-	#categories .col{
+	#categories .col, #latest-deals .col{
 		width: 25%;		
 	}
 	#categories .col:last-child{
 		display: none;
 	}
+	#latest-deals .col:nth-child(n+10){
+		display: none;
+	}
 }
 @media screen and (min-width: 1200px){
-	#categories .col{
+	#categories .col, #latest-deals .col{
 		width: 20%;		
 	}
 }
 
+/*footer response*/
+@media screen and (min-width: 781px){
+	#footer-logo, #footer-nav-social-media, #footer-quote, #footer-bottom .share-button, #copyright{
+		float: left;
+		clear: left;
+	}
+	#footer-nav, #maxcdn{
+		float: right;
+		clear: right;
+	}	
+	#footer-nav li{
+		float: left;
+	}
+	#footer-top{
+		height: 100px;
+	}
+	#footer-bottom{
+		height: 100px;
+	}
+}
+
+
 /*main sections*/
 
 header{
-	background: black;
+	background: #fff;
 	position: fixed;
 	top: 0;
 	width: 100%;
 	height: 50px;
+	text-align: center;
+	/*font-size: 2em;*/
+}
+#header-logo{
+	background: #e00;
+	color: #fff;
+	position: absolute;
+	height: 50px;
+	font-size: 2em;
+	padding: 10px 10px;
+	/*line-height: 50px;*/
+	/*margin: auto 0;*/
+}
+#header-nav{
+	color: #888;
+	font-size: 2em;
+	height: 50px;
+	line-height: 50px;
 }
 #main{
 	background: #ddd;
@@ -173,16 +271,70 @@ header{
 }
 #top-stories{
 	height: 500px;
+	overflow: auto;
 }
-#latest-news{
+
+#top-story-0{
+	background-image: url("../img/Facebook-Live-Video-520x347.jpg");
+}
+#top-story-1{
+	background-image: url("../img/Robin_feat-1200x600.jpg");
+}
+#top-story-2{
+	background-image: url("../img/truecaller-768x384.jpg");
+}
+#top-story-3{
+	background-image: url("../img/5445598436_ed6c25de1f_o_Anonymous-1200x600.jpg") ;
+}
+#alert-banner{
+	background: yellow;
+	text-align: center;
+	padding: 20px 20px;
+	margin: 5px 0;
+}
+#main-stories{
 	background: #fff;
 }
+/*#latest-news h1{
+	float: left;
+}
+#latest-news h2{
+	float: right;
+}*/
 #latest-news .grid, #categories .grid{
 	width: 90%;
 	margin: 0 auto;
 }
 
-
-
-
-
+#latest-deals{
+	margin: 5px 0;
+}
+/*images*/
+/*.img-thumb{
+	width: 100%;
+	height: 100px;
+}*/
+.img-thumb, #top-stories .col{
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-clip: content-box;
+}
+#latest-news .img-thumb{
+	background-image: url("../img/kanye-west-768x384.jpg");
+	background-size: auto 100%;
+}
+#categories .img-thumb{
+	background-image: url("../img/comcast-cable-box-by-mr-t-in-dc-520x346.jpg");
+	background-size: 100% auto;
+}
+#latest-deals .img-thumb{
+	background-image: url("../img/Google--520x361.jpg");
+	background-size: 100% auto;
+}
+#maxcdn{
+	background-image: url("../img/maxcdn.png");
+	background-size: 100% 100%;
+	background-position: 50% 50%;
+	width: 110px;
+	height: 120px;
+}
