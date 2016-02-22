@@ -1,18 +1,7 @@
 
-
-
-/*
-topics: apps/gear... (stacked, 3, 4, 5-grid):
-720 (also changes heading to mobile and first story as the front pic)
-1036
-1356
-*/
-
-
-
 /*misc*/
 *{
-	border: 1px dotted red !important;
+	/*border: 1px dotted red !important;*/
 }
 *, *:after, *:before {
   -webkit-box-sizing: border-box;
@@ -25,7 +14,12 @@ topics: apps/gear... (stacked, 3, 4, 5-grid):
 strong{
 	font-weight: bold;
 }
-
+li{
+	margin: 10px 10px;
+}
+li, #copyright{
+	color: #666;
+}
 /*grid*/
 /*clear anything after a grid*/
 .grid:after {
@@ -33,14 +27,8 @@ strong{
   display: table;
   clear: both;
 }
-/*gutters*/
-/*[class*='col'] {
-	float: left;
-	padding: 5px 5px;
-}*/
 .col {
 	float: left;
-	padding: 5px 5px;
 }
 
 /*columns*/
@@ -52,13 +40,26 @@ strong{
 		height: 25%;
 		background-size: 100% auto;
 	}
+	#top-stories{
+		font-size: 1.3em;
+	}
 	/*footer response*/
+	footer{
+		position: relative;
+	}
 	#footer-top, #footer-bottom{
 		text-align: center;
 	}
-	#maxcdn{
-		margin: auto auto;
+	#footer-quote{
+		border-top: 1px solid #444;
 	}
+	.share-button{
+		border-bottom:  1px solid #444;
+	}
+	#maxcdn{
+		float: right;
+	}
+
 }
 @media screen and (min-width: 781px) and (max-width: 1040px){
 	#top-story-0{
@@ -71,6 +72,13 @@ strong{
 		height: 50%;
 		background-size: auto 100%;
 	}
+	#top-stories h1{
+		font-size: 1.9em;
+	}
+	#top-stories h2, #top-stories h3{
+		font-size: 1.3em;
+	}
+
 }
 @media screen and (min-width: 1040px) {
 	#top-story-0 {
@@ -87,6 +95,15 @@ strong{
 		width: 25%;
 		height: 50%;
 		background-size: auto 100%;
+	}
+	#top-stories h1{
+		font-size: 1.9em;
+	}
+	#top-stories h2{
+		font-size: 1.5em;
+	}
+	#top-stories h3{
+		font-size: 1.3em;
 	}
 }
 
@@ -126,6 +143,7 @@ strong{
 	#latest-news .img-thumb{
 		width: 100%;
 		height: 100px;
+		background-size: 100% auto;
 	}
 	#categories .col, #latest-deals .col{
 		width: 100%;	
@@ -136,6 +154,13 @@ strong{
 		width: 25%;
 		float: left;
 	}
+	#categories .img-thumb{
+		background-size: 100% auto;
+	}
+	#latest-deals .img-thumb{
+		background-size: 100% auto;
+	}
+
 	#categories .first-col, #latest-deals .first-col{
 		height: 340px;
 	}
@@ -143,8 +168,20 @@ strong{
 		height: 80%;
 		width: 100%;
 	}
+	.col{
+		padding: 5px 5px;
+	}
+	#top-stories h1, #top-stories h2, #top-stories h3{
+		bottom: 5px;
+		left: 5px;
+		right: 5px;
+	}
 	/*mobile response (headers)*/
+	#header-nav{
+		display: none;
+	}
 	.category-header{
+		position: relative;
 		margin-top: 10px;
 		color: #fff;
 		background: #f00;
@@ -153,25 +190,64 @@ strong{
 	.category-header h1{
 		float: left;
 		font-size: 1em;
-		/*font-weight: bold;*/
+		font-weight: bold;
 	}
 	.category-header .arrow{
 		float: right;
-		/*margin-bottom: 0;*/
 	}
 	.category-header h2{
 		display: none;
 	}
+	[class*='img-caption']{
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+
+	#categories .col:not(.first-col) .img-caption1, #latest-deals .col:not(.first-col) .img-caption1{
+		height: 65%;
+	} 
+	#categories .col:not(.first-col) .img-caption2, #latest-deals .col:not(.first-col) .img-caption2{
+		height: 35%;
+	} 
+	#categories .col:not(.first-col) [class*='img-caption'], #latest-deals .col:not(.first-col) [class*='img-caption']{
+		float: right;
+		width: 75%%;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
 }
 /*mobile response*/
 @media screen and (min-width: 720px){
+	.col{
+		padding: 10px 10px;
+	}
+	#top-stories h1, #top-stories h2, #top-stories h3{
+		bottom: 10px;
+		left: 10px;
+		right: 10px;
+	}
 	.img-thumb{
 		width: 100%;
 		height: 100px;
 	}
+
+	#latest-news .img-thumb{
+		background-size: auto 100%;
+	}
+	#categories .img-thumb{
+		background-size: 100% auto;
+	}
+	#latest-deals .img-thumb{
+		background-size: 100% auto;
+	}
+
+	[class*='img-caption']{
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
 	/*mobile response (headers)*/
 	.category-header{
-		margin: 20px 0;
+		padding: 20px 10px;
 		color: #f00;
 	}
 	.category-header h1{
@@ -184,7 +260,6 @@ strong{
 	}
 	.category-header h2{
 		float: right;
-		/*margin-bottom: 0;*/
 		font-size: 1em;
 	}
 }
@@ -235,6 +310,11 @@ strong{
 	#footer-bottom{
 		height: 100px;
 	}
+	#copyright{
+		width: 100%;
+		border-top: 1px solid #444;
+		margin: 20px 0;
+	}
 }
 
 
@@ -247,17 +327,15 @@ header{
 	width: 100%;
 	height: 50px;
 	text-align: center;
-	/*font-size: 2em;*/
+	z-index: 1;
 }
-#header-logo{
+.logo{
 	background: #e00;
 	color: #fff;
 	position: absolute;
 	height: 50px;
 	font-size: 2em;
 	padding: 10px 10px;
-	/*line-height: 50px;*/
-	/*margin: auto 0;*/
 }
 #header-nav{
 	color: #888;
@@ -266,14 +344,22 @@ header{
 	line-height: 50px;
 }
 #main{
-	background: #ddd;
+	background: #eee;
 	margin-top: 50px;
 }
 #top-stories{
+	color: #fff;
 	height: 500px;
 	overflow: auto;
 }
-
+#top-stories .col{
+	position: relative;
+}
+#top-stories h1, #top-stories h2, #top-stories h3{
+	padding: 5px;
+	background: rgba(0, 0, 0, 0.4);
+	position: absolute;
+}
 #top-story-0{
 	background-image: url("../img/Facebook-Live-Video-520x347.jpg");
 }
@@ -295,25 +381,17 @@ header{
 #main-stories{
 	background: #fff;
 }
-/*#latest-news h1{
-	float: left;
+#categories, #latest-deals{
+	padding-bottom: 10px;
 }
-#latest-news h2{
-	float: right;
-}*/
 #latest-news .grid, #categories .grid{
 	width: 90%;
 	margin: 0 auto;
 }
-
 #latest-deals{
-	margin: 5px 0;
+	background: #fff;
 }
 /*images*/
-/*.img-thumb{
-	width: 100%;
-	height: 100px;
-}*/
 .img-thumb, #top-stories .col{
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
@@ -321,15 +399,25 @@ header{
 }
 #latest-news .img-thumb{
 	background-image: url("../img/kanye-west-768x384.jpg");
-	background-size: auto 100%;
 }
 #categories .img-thumb{
 	background-image: url("../img/comcast-cable-box-by-mr-t-in-dc-520x346.jpg");
-	background-size: 100% auto;
 }
 #latest-deals .img-thumb{
 	background-image: url("../img/Google--520x361.jpg");
-	background-size: 100% auto;
+}
+.img-caption1, .img-caption2 {
+	background: #fff;
+}
+footer{
+	background: #000;
+	color: #bbb;
+}
+#footer-top div{
+	padding: 10px 10px;
+}
+#footer-bottom div{
+	padding: 10px 10px;		
 }
 #maxcdn{
 	background-image: url("../img/maxcdn.png");
